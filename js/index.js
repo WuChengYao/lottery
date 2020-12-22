@@ -59,12 +59,16 @@ function playFun() {
 }
 //停止抽獎
 function stopFun() {
-    clearInterval(timer);
-    var winning_name = document.getElementById('title').textContent;
-    datas.remove(winning_name)
-    inHtml();
-    var play = document.getElementById('play');
-    play.style.background = '#036';
+    if (datas.length == 0) {
+        alert('目前沒有設定選項');
+    } else {
+        clearInterval(timer);
+        var winning_name = document.getElementById('title').textContent;
+        datas.remove(winning_name)
+        inHtml();
+        var play = document.getElementById('play');
+        play.style.background = '#036';
+    }
 }
 
 //定義remove
